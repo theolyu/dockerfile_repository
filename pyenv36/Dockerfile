@@ -10,7 +10,6 @@ RUN apt-get update \
 && apt-get install gdb -y\
 && apt-get install python-software-properties -y\
 && apt-get install software-properties-common -y\
-# && add-apt-repository ppa:jonathonf/python-3.6 -y\
 && add-apt-repository ppa:deadsnakes/ppa -y\
 && apt-get update\
 && apt-get install python3.6 -y\
@@ -23,4 +22,5 @@ RUN apt-get update \
 && rm /usr/bin/pip3 \
 && ln -s -f /usr/local/bin/pip3 /usr/bin/pip3\
 && ln -s -f /usr/local/bin/pip3 /usr/bin/pip\
-&& pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
+&& pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ \
+&& apt-get install vim -y
